@@ -1,0 +1,15 @@
+[project]
+name = "cli-roman"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.16.0",
+]
+
+[project.scripts]
+roman = "roman_numeral_converter:main"
+
+to-roman = "roman_numeral_converter:to_roman"
+from-roman = "roman_numeral_converter:from_roman"

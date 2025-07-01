@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: cli-roman
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
+# Roman Numeral Converter
+
+## Requirements:
+- it should be able to take a Roman Numeral and convert it to it's Arabic form (Arabic numbers are the ones we are familiar with: 1,2,3 etc.)
+- it should be able to take an Arabic Number and convert it to it's Roman Numeral form
+- does not need to handle negatives

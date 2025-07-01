@@ -1,0 +1,2 @@
+[console_scripts]
+roman = roman_numeral_converter:main
