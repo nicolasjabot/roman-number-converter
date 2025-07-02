@@ -3,14 +3,15 @@ from errors import RomanFormatError, ArabicRangeError, NumberError
 
 
 # constants---------------------------------------------------------------------
-_ROMAN_DIGITS = {
+# reafctor as enum?
+ROMAN_DIGITS = {
     'I': 1,   'V': 5,
     'X': 10,  'L': 50,
     'C': 100, 'D': 500,
     'M': 1000
 }
 
-_ARABIC_TO_ROMAN = (
+ARABIC_TO_ROMAN = (
     (1000, 'M'), (900, 'CM'),
     (500,  'D'), (400, 'CD'),
     (100,  'C'), (90,  'XC'),
@@ -30,7 +31,7 @@ def roman_to_int_logic(roman: str) -> int:
     total, prev = 0, 0
     for ch in reversed(roman.upper()):
         try:
-            val = _ROMAN_DIGITS[ch]
+            val = ROMAN_DIGITS[ch]
         except KeyError:
             raise RomanFormatError(f"invalid digit: {ch}") from None
         total = total - val if val < prev else total + val
@@ -48,8 +49,7 @@ def int_to_roman_logic(n: int) -> str:
         raise ArabicRangeError("number must be greater than 1")
 
     out = []
-    for val, sym in _ARABIC_TO_ROMAN:
+    for val, sym in ARABIC_TO_ROMAN:
         count, n = divmod(n, val)
         out.append(sym * count)
     return ''.join(out)
-
