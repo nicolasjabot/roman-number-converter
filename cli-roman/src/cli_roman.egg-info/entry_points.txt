@@ -1,2 +1,2 @@
 [console_scripts]
-roman = roman_cli:main
+roman = roman_cli:app

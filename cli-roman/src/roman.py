@@ -1,6 +1,9 @@
 import sys
+import logging
 from errors import RomanFormatError, ArabicRangeError, NumberError
 
+
+logger = logging.getLogger(__name__)
 
 # constants---------------------------------------------------------------------
 # reafctor as enum?
@@ -23,9 +26,12 @@ ARABIC_TO_ROMAN = (
 # ------------------------------------------------------------------------------
 
 def roman_to_int_logic(roman: str) -> int:
+    # logger.debug("Starting conversion of Roman numeral: %s", roman)
     if not isinstance(roman, str):
+        logger.error("Invalid input type: %s", type(roman).__name__)
         raise TypeError("roman must be str")
     if not roman:
+        logger.error("Empty string provided")
         raise RomanFormatError("empty string")
 
     total, prev = 0, 0
@@ -38,18 +44,25 @@ def roman_to_int_logic(roman: str) -> int:
         prev = max(prev, val)
 
     if int_to_roman_logic(total) != roman.upper():
+        logger.error("Invalid Roman numeral format: %s", roman)
         raise RomanFormatError(f"invalid format {roman!r}")
+    # logger.debug("Successfully converted %s to %d", roman, total)
     return total
 
 
 def int_to_roman_logic(n: int) -> str:
+    # logger.debug("Starting conversion of %d to Roman numeral", n)
     if not isinstance(n, int) or isinstance(n, bool):
+        logger.error("Invalid input type: %s", type(n).__name__)
         raise TypeError("number must be int (not bool)")
     if not 1 <= n:
+        logger.error("Number %d out of valid range, greater than 0", n)
         raise ArabicRangeError("number must be greater than 1")
 
     out = []
     for val, sym in ARABIC_TO_ROMAN:
         count, n = divmod(n, val)
         out.append(sym * count)
-    return ''.join(out)
+    result = ''.join(out)
+    # logger.debug("Successfully converted %d to %s", n, result)
+    return result

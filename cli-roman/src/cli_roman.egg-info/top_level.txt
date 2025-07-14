@@ -1,3 +1,4 @@
 errors
+log_demo
 roman
 roman_cli

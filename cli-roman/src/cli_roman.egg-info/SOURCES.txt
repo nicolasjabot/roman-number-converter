@@ -1,6 +1,7 @@
 README.md
 pyproject.toml
 src/errors.py
+src/log_demo.py
 src/roman.py
 src/roman_cli.py
 src/cli_roman.egg-info/PKG-INFO
@@ -9,4 +10,5 @@ src/cli_roman.egg-info/dependency_links.txt
 src/cli_roman.egg-info/entry_points.txt
 src/cli_roman.egg-info/requires.txt
 src/cli_roman.egg-info/top_level.txt
+tests/test_to_int.py
 tests/test_to_roman.py

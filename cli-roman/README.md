@@ -25,3 +25,13 @@ python cli-roman/src/roman_cli.py to-roman 42
 ```
 
 Both commands print the converted value on the command line.
+
+## Good to know:
+
+### Logging Strategy
+
+This project uses Python's standard `logging` module. Library code obtains loggers using `logging.getLogger(__name__)` so that applications can configure handlers as needed.
+
+### Testing
+
+Tests are found under cli-roman/tests. The project uses `pytest` library to test the various components of the roman numeral converter.
