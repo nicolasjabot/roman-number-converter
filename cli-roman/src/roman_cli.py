@@ -27,6 +27,7 @@ def to_int(roman: str = typer.Argument(..., help="Roman numeral")):
     if r:
         cached = r.get(key)
         if cached is not None:
+            typer.echo(f"Value is cached: using stored value:")
             typer.echo(cached)
             return
 
@@ -34,6 +35,7 @@ def to_int(roman: str = typer.Argument(..., help="Roman numeral")):
         result = roman_to_int_logic(roman)
         if r:
             r.setex(key, REDIS_TTL, result)
+            typer.echo(f"Computed and stored new value:")
         typer.echo(result)
     except RomanFormatError as exc:
         raise CLIError(str(exc), 2)
@@ -43,11 +45,14 @@ def to_int(roman: str = typer.Argument(..., help="Roman numeral")):
 
 @app.command("to-roman")
 def to_roman(number: int = typer.Argument(..., help="> 1")):
+    """Convert integer numeral to roman numeral"""
+
     key = f"{CACHE_PREFIX}arabic:{number}"
 
     if r:
         cached = r.get(key)
         if cached is not None:
+            typer.echo(f"Value is cached: using stored value:")
             typer.echo(cached)
             return
 
@@ -55,6 +60,7 @@ def to_roman(number: int = typer.Argument(..., help="> 1")):
         result = int_to_roman_logic(number)
         if r:
             r.setex(key, REDIS_TTL, result)
+            typer.echo(f"Computed and stored new value:")
         typer.echo(result)
     except ArabicRangeError as exc:
         raise CLIError(str(exc), 3)

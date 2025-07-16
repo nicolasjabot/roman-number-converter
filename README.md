@@ -54,6 +54,18 @@ execution across different environments.
 
 ## Good to know:
 
+### Caching 
+The application uses Redis for caching conversion results:
+
+- Redis server must be running locally or accessible via network
+- Default connection: `redis://localhost:6379`
+
+When using Docker, you can link the converter to a Redis container:
+```bash
+# Start Redis container
+docker run -d --name redis-cache redis
+```
+
 ### Logging Strategy
 
 This project uses Python's standard `logging` module. Library code obtains loggers using `logging.getLogger(__name__)` so that applications can configure handlers as needed.
