@@ -1,0 +1,25 @@
+2025-07-08 15:58:03 - roman - ERROR - Number 0 out of valid range (1-3999)
+2025-07-08 15:58:25 - roman - ERROR - Number 0 out of valid range, greater than 0
+2025-07-08 16:12:16 - __main__ - DEBUG - Starting Roman numeral converter CLI
+2025-07-08 16:12:16 - roman - DEBUG - Starting conversion of 45 to Roman numeral
+2025-07-08 16:12:16 - roman - DEBUG - Successfully converted 0 to XLV
+2025-07-08 16:12:16 - __main__ - DEBUG - CLI execution completed
+2025-07-08 16:12:51 - __main__ - DEBUG - Starting Roman numeral converter CLI
+2025-07-08 16:12:51 - roman - DEBUG - Starting conversion of Roman numeral: XVI
+2025-07-08 16:12:51 - roman - DEBUG - Starting conversion of 16 to Roman numeral
+2025-07-08 16:12:51 - roman - DEBUG - Successfully converted 0 to XVI
+2025-07-08 16:12:51 - roman - DEBUG - Successfully converted XVI to 16
+2025-07-08 16:12:51 - __main__ - DEBUG - CLI execution completed
+2025-07-08 16:18:34 - __main__ - DEBUG - Starting Roman numeral converter CLI
+2025-07-08 16:18:34 - roman - DEBUG - Starting conversion of Roman numeral: XVIIII
+2025-07-08 16:18:34 - roman - DEBUG - Starting conversion of 19 to Roman numeral
+2025-07-08 16:18:34 - roman - DEBUG - Successfully converted 0 to XIX
+2025-07-08 16:18:34 - roman - ERROR - Invalid Roman numeral format: XVIIII
+2025-07-08 16:18:34 - __main__ - DEBUG - CLI execution completed
+2025-07-09 14:25:11 - __main__ - DEBUG - Starting Roman numeral converter CLI
+2025-07-09 14:25:11 - roman - DEBUG - Starting conversion of 45 to Roman numeral
+2025-07-09 14:25:11 - roman - DEBUG - Successfully converted 0 to XLV
+2025-07-09 14:25:11 - __main__ - DEBUG - CLI execution completed
+2025-07-09 14:25:46 - roman - DEBUG - Starting conversion of 45 to Roman numeral
+2025-07-09 14:25:46 - roman - DEBUG - Successfully converted 0 to XLV
+2025-07-15 15:28:34 - roman - ERROR - Invalid Roman numeral format: MMXXVIIIII

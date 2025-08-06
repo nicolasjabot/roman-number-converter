@@ -8,7 +8,9 @@ COPY . .
 
 RUN uv sync
 
-RUN uv pip install -e .
+RUN uv pip install .
 
 #entrypoint to use the CLI command
-ENTRYPOINT [".venv/bin/roman"]
+# ENTRYPOINT [".venv/bin/roman"]
+
+CMD [".venv/bin/uvicorn", "roman_api:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
